@@ -39,7 +39,7 @@ You can also use any other custom name instead of 'lychee'. Remember to use that
 
 Add this upstream Lychee quickstart repo
 
-	cd anchor
+	cd lychee
 	rm php/index.php
 	git remote add upstream -m master https://github.com/gautamkrishnar/Lychee-openshift-quickstart.git
 	git pull -s recursive -X theirs upstream master
