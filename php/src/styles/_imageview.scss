@@ -1,0 +1,103 @@
+#imageview {
+
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(10, 10, 10, .98);
+	transition: background-color .3s;
+
+	// Modes -------------------------------------------------------------- //
+	&.view { background-color: inherit; }
+
+	&.full { background-color: black(1); }
+
+	// ImageView -------------------------------------------------------------- //
+	#image {
+		position: absolute;
+		top: 60px;
+		right: 30px;
+		bottom: 30px;
+		left: 30px;
+		transition: top .3s, right .3s, bottom .3s, left .3s, margin-top .3s, opacity .2s, transform .3s $timingBounce;
+		will-change: transform;
+
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: contain;
+
+		animation-name: zoomIn;
+		animation-duration: .3s;
+		animation-timing-function: $timingBounce;
+
+		&.small {
+			top: 50%;
+			right: auto;
+			bottom: auto;
+			left: 50%;
+		}
+
+		&.full {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	// Previous/Next Buttons -------------------------------------------------------------- //
+	.arrow_wrapper {
+		position: fixed;
+		width: 15%;
+		height: calc(100% - 60px);
+		top: 60px;
+
+		&--previous { left: 0; }
+
+		&--next { right: 0; }
+
+		a {
+			position: fixed;
+			top: 50%;
+			margin: -19px 0 0;
+			padding: 8px 12px;
+			width: 16px;
+			height: 22px;
+			// The background-image will be styled dynamically via JS
+			// background-image: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('');
+			background-size: 100% 100%;
+			border: 1px solid white(.8);
+			opacity: .6;
+			z-index: 2;
+			transition: transform .2s ease-out, opacity .2s ease-out;
+			will-change: transform;
+
+			&#previous {
+				left: -1px;
+				transform: translateX(-100%);
+			}
+
+			&#next {
+				right: -1px;
+				transform: translateX(100%);
+			}
+		}
+
+		&:hover a#previous,
+		&:hover a#next {
+			transform: translateX(0);
+		}
+
+		a:hover {
+			opacity: 1;
+		}
+
+		.iconic {
+			fill: white(.8);
+			filter: drop-shadow(0 1px 0 black(.4));
+		}
+	}
+
+}
