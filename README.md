@@ -52,7 +52,7 @@ Head to your application at:
 
 	http://lychee-$yourdomain.rhcloud.com
 
-To give your new Anchor site a web address of its own, add your desired alias:
+To give your new lychee site a web address of its own, add your desired alias:
 
 	rhc app add-alias -a lychee --alias "$whatever.$mydomain.com"
 
