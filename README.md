@@ -58,5 +58,8 @@ To give your new lychee site a web address of its own, add your desired alias:
 
 Then add a cname entry in your domain's dns configuration pointing your alias to $whatever-$yourdomain.rhcloud.com.
 
+### Known Bugs
+* Don't make a new push after deploying... (Will be fixed soon)
+
 ### Spread the word
 Liked using Lychee in openshift! Don't forget to spread the word by starring this repo.
